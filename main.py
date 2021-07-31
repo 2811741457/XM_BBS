@@ -222,7 +222,7 @@ def AutoLike(Client: XM_BBS, stype='hot'):
         after=posts['entity']['after']
         res = posts['entity']['records']
         for j in res:
-            if not Client.thumbup(j['id']):
+            if Client.thumbup(j['id']):
                 exit(0)
             else:
                 c += 1
